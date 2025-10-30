@@ -62,7 +62,6 @@ function Show-Title {
     Write-Host "Data Path:   $dataPath" -ForegroundColor DarkGray
     Write-Host "Backup Path: $backupPath" -ForegroundColor DarkGray
     Write-Host "Running as Admin: $isAdmin" -BackgroundColor DarkGray -ForegroundColor White
-    Write-Host "--------------------------------------------------"
     $attempt = $RepairCounter + 1
     if ($attempt -in 3, 4) {
         $color = 'Yellow'
@@ -76,6 +75,7 @@ function Show-Title {
     Write-Host "Attempt:     $attempt of $MaxRepairs" -ForegroundColor $color
     if ($WhatIf) { Write-Host "MODE: TESTING (-WhatIf ENABLED)" -ForegroundColor Yellow }
     if ($Verbose) { Write-Host "VERBOSE: ENABLED" -ForegroundColor DarkGray }
+    Write-Host "--------------------------------------------------"
     Write-Host ""
 }
 
@@ -105,7 +105,6 @@ function Stop-MySQLIfRunning {
     $svc = Get-Service -Name $serviceName -ErrorAction SilentlyContinue
     if ($svc -ne $null) {
         if ($svc.Status -ne 'Stopped') {
-            Write-Host "Stopping MySQL service..."
             Stop-Service -Name $serviceName -Force -ErrorAction SilentlyContinue
             Show-ProgressAnimation "Stopping MySQL service" $randomDelay
         }
@@ -217,7 +216,6 @@ function Start-MySQL {
     $svc = Get-Service -Name $serviceName -ErrorAction SilentlyContinue
     if ($svc -ne $null) {
         if ($svc.Status -ne 'Running') {
-            Write-Host "Starting MySQL service..."
             Start-Service -Name $serviceName -ErrorAction SilentlyContinue
             Show-ProgressAnimation "Starting MySQL service" $randomDelay
         }
