@@ -55,6 +55,25 @@ It safely removes broken system tables, restores them from backup, and keeps you
 - Running the script requires Administrator privileges to manage the MySQL service.
 - If MySQL is installed elsewhere, the script will prompt for the correct paths.
 - If your issue persists after 5 attempts, manual inspection is recommended.
+- To prevent this error from recurring, consider running MySQL and Apache as services from the XAMPP Control Panel (check the "Svc" checkbox). This method works 99% of the time.
+
+This script is **recommended for specific MySQL issues** related to **XAMPP installations** and may not resolve all types of database corruption.
+
+For example, it may help if you encounter the following error:
+```log
+12:00:00 AM  [mysql] 	Error: MySQL shutdown unexpectedly.
+12:00:00 AM  [mysql] 	This may be due to a blocked port, missing dependencies, 
+12:00:00 AM  [mysql] 	improper privileges, a crash, or a shutdown by another method
+12:00:00 AM  [mysql] 	Press the Logs button to view error logs and check
+12:00:00 AM  [mysql] 	the Windows Event Viewer for more clues
+12:00:00 AM  [mysql] 	If you need more help, copy and post this
+12:00:00 AM  [mysql] 	entire log window on the forums
+
+```
+or errors related to **corrupted system tables**.
+
+Other issues may require different troubleshooting steps. Keep this in mind before running the script.
+Always make a **backup** of your `data` folder before running this script!
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
