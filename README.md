@@ -48,9 +48,13 @@ It safely removes broken system tables, restores them from backup, and keeps you
 |4 | Restores system folders and files from the MySQL `backup` directory |
 |5 | Starts MySQL again and asks if the issue is fixed |
 |6 | If not, it repeats the process up to 5 times |
-
-# Disclaimer
-Use this script at your own risk. Always ensure you have backups of your data before running repair operations. The author is not responsible for any data loss or damage caused by the use of this script.
+# Important Notes
+- Always ensure you have backups of your data before running repair operations.
+- The script only targets system databases; user-created databases are not affected.
+- Make sure `C:\xampp\mysql\backup` exists before running.
+- Running the script requires Administrator privileges to manage the MySQL service.
+- If MySQL is installed elsewhere, the script will prompt for the correct paths.
+- If your issue persists after 5 attempts, manual inspection is recommended.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -60,5 +64,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Author: **Unknowplanet40**
     “Because sometimes we break it just to fix it better.”
 
-#### Note:
- I'm just a beginner in PowerShell and scripting, so if you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on GitHub! Your feedback is greatly appreciated! 😊
+# Disclaimer
+Use this script at your own risk. Always ensure you have backups of your data before running repair operations. The author is not responsible for any data loss or damage caused by the use of this script.
+
+    I'm just a beginner in PowerShell and scripting, so if you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on GitHub! Your feedback is greatly appreciated! 😊
