@@ -56,6 +56,7 @@ It safely removes broken system tables, restores them from backup, and keeps you
 - If MySQL is installed elsewhere, the script will prompt for the correct paths.
 - If your issue persists after 5 attempts, manual inspection is recommended.
 - To prevent this error from recurring, consider running MySQL and Apache as services from the XAMPP Control Panel (check the "Svc" checkbox). This method works 99% of the time.
+- If you have custom configurations like user-defined users or privileges, you may need to reapply them after the repair.
 
 This script is **recommended for specific MySQL issues** related to **XAMPP installations** and may not resolve all types of database corruption.
 
