@@ -87,4 +87,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Use this script at your own risk. Always ensure you have backups of your data before running repair operations. The author is not responsible for any data loss or damage caused by the use of this script.
 
     I'm just a beginner in PowerShell and scripting, so if you find any issues or have suggestions for
-    improvement, feel free to open an issue or submit a pull request on GitHub! Your feedback is greatly appreciated! 😊
+    improvement, feel free to open an issue or submit a pull request on GitHub! Your feedback is greatly
+    appreciated! 😊
