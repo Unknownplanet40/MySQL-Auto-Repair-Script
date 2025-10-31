@@ -16,9 +16,9 @@ It safely removes broken system tables, restores them from backup, and keeps you
 
 # Modes
 - **Normal Mode**: Executes the repair process with standard output.
-- **WhatIf Mode**: Simulates the repair process without making any changes. (for testing purposes)
+<!-- - **WhatIf Mode**: Simulates the repair process without making any changes. (for testing purposes) -->
 - **Verbose Mode**: Provides detailed output during the repair process.
-- **WhatIf + Verbose Mode**: Simulates the repair process with detailed output.
+<!-- - **WhatIf + Verbose Mode**: Simulates the repair process with detailed output. -->
 
 # Prerequisites
 - PowerShell (Windows) 5.1 or higher <sup> (butits recommended to use PowerShell 7.x or higher)</sup>
@@ -31,12 +31,13 @@ It safely removes broken system tables, restores them from backup, and keeps you
 1. Download the repository from GitHub
 2. Find the `RunMySQLRepair.bat` file in the downloaded folder.
 3. Right-click on `RunMySQLRepair.bat` and select "Run as Administrator".
-4. Choose the desired mode (Normal, WhatIf, Verbose, or WhatIf + Verbose).
+    <!-- 4. Choose the desired mode (Normal, WhatIf, Verbose, or WhatIf + Verbose). -->
+4. Choose the desired mode (Normal or Verbose).
 5. The script will execute and attempt to repair MySQL issues automatically.
 6. Follow any on-screen prompts if necessary.
 7. Check the MySQL service status in XAMPP after the script completes.
 8. If issues persist, just type "Y" when prompted to retry the repair process.
-9. If problems continue after 5 attempts, consider seeking further assistance or consulting MySQL documentation.
+9.  If problems continue after 5 attempts, consider seeking further assistance or consulting MySQL documentation.
 10. Enjoy your repaired MySQL server!
 
 # What It Does Internally

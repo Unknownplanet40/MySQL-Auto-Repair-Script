@@ -24,19 +24,20 @@ if %errorLevel% neq 0 (
     echo Requesting Administrator privileges...
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
     exit /b
-)
+) 
 
 echo Select mode:
 echo [1] Normal Mode
-echo [2] WhatIf (Test only)
-echo [3] Verbose (Detailed)
-echo [4] WhatIf + Verbose
+:: echo [2] WhatIf (Test only)
+echo [2] Verbose (Detailed output)
+:: echo [4] WhatIf + Verbose
 echo.
-set /p mode="Enter choice (1-4): "
+:: set /p mode="Enter choice (1-4): "
+set /p mode="Enter choice (1 or 2): "
 
-if "%mode%"=="2" set "PS_ARGS=-WhatIf"
-if "%mode%"=="3" set "PS_ARGS=-Verbose"
-if "%mode%"=="4" set "PS_ARGS=-WhatIf -Verbose"
+::  if "%mode%"=="2" set "PS_ARGS=-WhatIf"
+if "%mode%"=="2" set "PS_ARGS=-Verbose"
+::  if "%mode%"=="4" set "PS_ARGS=-WhatIf -Verbose"
 
 echo.
 echo Launching PowerShell script...
