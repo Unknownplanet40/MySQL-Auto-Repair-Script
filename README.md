@@ -19,11 +19,12 @@ It safely removes broken system tables, restores them from backup, and keeps you
 <!-- - **WhatIf Mode**: Simulates the repair process without making any changes. (for testing purposes) -->
 - **Verbose Mode**: Provides detailed output during the repair process.
 <!-- - **WhatIf + Verbose Mode**: Simulates the repair process with detailed output. -->
+- **Backup Before Repair Mode**: Backs up user databases separately before attempting repairs.
 
 # Prerequisites
-- PowerShell (Windows) 5.1 or higher <sup> (butits recommended to use PowerShell 7.x or higher)</sup>
+- PowerShell (Windows) 5.1 or higher
 - XAMPP installed with MySQL component.
-- Administrator privileges to run the script. <sup> (Right-click PowerShell and select "Run as Administrator")</sup>
+- Administrator privileges to run the script.
 
 **note**: If not run as Administrator, It will not be able to stop/start the MySQL service.
 
@@ -32,12 +33,12 @@ It safely removes broken system tables, restores them from backup, and keeps you
 2. Find the `RunMySQLRepair.bat` file in the downloaded folder.
 3. Right-click on `RunMySQLRepair.bat` and select "Run as Administrator".
     <!-- 4. Choose the desired mode (Normal, WhatIf, Verbose, or WhatIf + Verbose). -->
-4. Choose the desired mode (Normal or Verbose).
+4. Choose the desired mode (Normal or Verbose or Backup Before Repair <sup> `This will back up user databases only before repair`</sup>).
 5. The script will execute and attempt to repair MySQL issues automatically.
 6. Follow any on-screen prompts if necessary.
 7. Check the MySQL service status in XAMPP after the script completes.
 8. If issues persist, just type "Y" when prompted to retry the repair process.
-9.  If problems continue after 5 attempts, consider seeking further assistance or consulting MySQL documentation.
+9.  If problems continue after 5 attempts, consider seeking further assistance or consulting MySQL documentation or trying other troubleshooting methods.
 10. Enjoy your repaired MySQL server!
 
 # What It Does Internally
@@ -45,10 +46,11 @@ It safely removes broken system tables, restores them from backup, and keeps you
 |-----|-------------|
 |1 | Stops the MySQL service (or `mysqld` process) |
 |2 | Creates a timestamped backup of the current `data` folder |
-|3 | Deletes only **system-related folders/files** |
+|3 | Deletes only **system-related folders/files** from the `data` directory |
 |4 | Restores system folders and files from the MySQL `backup` directory |
 |5 | Starts MySQL again and asks if the issue is fixed |
 |6 | If not, it repeats the process up to 5 times |
+
 # Important Notes
 - Always ensure you have backups of your data before running repair operations.
 - The script only targets system databases; user-created databases are not affected.
@@ -80,7 +82,10 @@ Always make a **backup** of your `data` folder before running this script!
 # License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 
-# Credits
+# Preview (Screenshots)
+![MySQL Auto Repair Script Preview](./Preview/Launcher.png)
+
+![MySQL Auto Repair Script Preview](./Preview/Proccess.png)
 
 ### Author: **Unknowplanet40**
     “Because sometimes we break it just to fix it better.”
